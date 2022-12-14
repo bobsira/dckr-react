@@ -1,0 +1,11 @@
+Using the WSL terminal build your Docker image as you typically would:
+docker build -f Dockerfile.dev -t sirasira:frontend .
+
+Using the WSL terminal, start and run a container. It is very important that you do not use a PWD variable as shown in the lecture video. Use the ~ alias for the home directory or type out the full path:
+Using ~ alias:
+docker run -it -p 3000:3000 -v /home/node/app/node_modules -v ~/frontend:/home/node/app sirasira:frontend
+
+Using the full path:
+docker run -it -p 3000:3000 -v /home/node/app/node_modules -v /home/sirasira/frontend:/home/node/app sirasira:frontend
+
+Going forward in this course, all Docker commands and projects should be run within WSL and not Windows.
